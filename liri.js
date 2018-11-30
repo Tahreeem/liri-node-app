@@ -25,18 +25,26 @@ function WhatToDo(nodeArgs) {
 
         var movieName = "";
 
-        // Loop through all the words in the node argument
-        // And do a little for-loop magic to handle the inclusion of "+"s
-        for (var i = 3; i < nodeArgs.length; i++) {
-
-            if (i > 3 && i < nodeArgs.length) {
-                movieName = movieName + "+" + nodeArgs[i];
-            }
-            else {
-                movieName += nodeArgs[i];
-
-            }
+        if (!nodeArgs[3]) {
+            movieName = "Mr.Nobody";
         }
+        else {
+
+            // Loop through all the words in the node argument
+            // And do a little for-loop magic to handle the inclusion of "+"s
+            for (var i = 3; i < nodeArgs.length; i++) {
+
+                if (i > 3 && i < nodeArgs.length) {
+                    movieName = movieName + "+" + nodeArgs[i];
+                }
+                else {
+                    movieName += nodeArgs[i];
+
+                }
+            }
+
+        }
+
 
         movieDetails(movieName);
 
